@@ -1,0 +1,21 @@
+{
+    "parser": "babel-eslint",
+    "extends": [
+      "eslint:recommended",
+      "google"
+    ],
+    "env": {
+      "amd": true,
+      "browser": true,
+      "node": true
+    },
+    "rules": {
+      "quotes": ["error", "double"],
+      "react/jsx-uses-react": 2,
+      "react/jsx-uses-vars": 2,
+      "react/react-in-jsx-scope": 2
+    },
+    "plugins": [
+      "react"
+    ]
+}

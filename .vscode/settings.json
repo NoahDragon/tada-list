@@ -1,0 +1,6 @@
+{
+  "eslint.options": {
+    "configfile": "C:/Users/hzhou/Dev/tada-list/.eslintrc.json"
+  },
+  "python.pythonPath": "C:\\Users\\hzhou\\AppData\\Local\\conda\\conda\\envs\\python3.5\\python.exe"
+}

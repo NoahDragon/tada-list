@@ -1,0 +1,69 @@
+{
+  "name": "tada-list",
+  "version": "1.0.0",
+  "description": "yet another to-do list",
+  "main": "index.html",
+  "scripts": {
+    "lint": "npm run lint-js && npm run lint-py",
+    "lint-js": "./node_modules/.bin/eslint .",
+    "lint-py": "pylint ./server/app.py",
+    "serve": "cross-os server",
+    "server": {
+      "darwin": "FLASK_APP=server/app.py flask run --port=8081",
+      "linux": "FLASK_APP=server/app.py flask run --port=8081",
+      "win32": "set FLASK_APP=server/app.py & flask run --port=8081"
+    },
+    "debug": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NoahDragon/tada-list.git"
+  },
+  "keywords": [
+    "to-do",
+    "list",
+    "mvc",
+    "react",
+    "python",
+    "redux",
+    "nodejs",
+    "flask"
+  ],
+  "author": "abner",
+  "license": "BSD-3-Clause",
+  "bugs": {
+    "url": "https://github.com/NoahDragon/tada-list/issues"
+  },
+  "homepage": "https://github.com/NoahDragon/tada-list#readme",
+  "dependencies": {
+    "react": "^16.5.2",
+    "react-dom": "^16.5.2",
+    "react-redux": "^5.0.7",
+    "react-router": "^4.3.1",
+    "react-router-dom": "^4.3.1",
+    "redux": "^4.0.0",
+    "redux-form": "^7.4.2",
+    "redux-freeze": "^0.1.5",
+    "redux-logger": "^3.0.6",
+    "redux-thunk": "^2.3.0"
+  },
+  "devDependencies": {
+    "babel": "^6.23.0",
+    "babel-core": "^6.26.3",
+    "babel-eslint": "^9.0.0",
+    "babel-jsx": "^0.14.3",
+    "babel-loader": "^7.1.5",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "cross-os": "^1.3.0",
+    "eslint": "^5.6.0",
+    "eslint-config-google": "^0.10.0",
+    "eslint-plugin-react": "^7.11.1",
+    "html-webpack-plugin": "^3.2.0",
+    "uglifyjs-webpack-plugin": "^2.0.1",
+    "webpack": "^4.19.1",
+    "webpack-cli": "^3.1.0",
+    "webpack-dev-server": "^3.1.8"
+  }
+}
