@@ -15,16 +15,13 @@ module.exports = {
   },
   module: {
     rules: [
-      {test: /\.js|\.jsx$/,
+      {test: /\.jsx?$/,
         exclude: /node_modules/,
         use: [
-          {loader: "babel-loader",
-            options: {
-              presets: ["es2015", "react"],
-            },
-          },
+          {loader: "babel-loader"},
         ],
-      }],
+      },
+    ],
   },
   plugins: [
     new HtmlWebpackPlugin({

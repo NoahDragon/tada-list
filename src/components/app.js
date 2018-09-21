@@ -1,19 +1,14 @@
 import React from "react";
-import {Component} from "react";
+import Footer from "./Footer";
+import AddTodo from "../containers/AddTodo";
+import VisibleTodoList from "../containers/VisibleTodoList";
 
-/**
- * React component App.
- */
-export default class App extends Component {
-  /**
-   * Webpage entry point.
-   * @return {JSX}
-   */
-  render() {
-    return (
-      <div>
-              Test
-      </div>
-    );
-  }
-}
+const App = () => (
+  <div>
+    <AddTodo />
+    <VisibleTodoList />
+    <Footer />
+  </div>
+);
+
+export default App;

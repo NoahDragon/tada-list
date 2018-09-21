@@ -12,7 +12,7 @@ Please make sure the following components have successfully installed on target 
 * Python 3.5
 * Nodejs 8
 * NPM
-* Gi
+* Git
 
 
 ## Installation

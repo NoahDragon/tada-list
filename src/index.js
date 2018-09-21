@@ -4,17 +4,13 @@ import {Provider} from "react-redux"; // eslint-disable-line
 import {createStore} from "redux"; // eslint-disable-line
 
 import App from "./components/app";
-// import reducers from "./reducers";
+import reducers from "./reducers";
 
-/*
+
 ReactDOM.render(
     <Provider store={createStore(reducers)}>
-        <App />
+      <App />
     </Provider>,
     document.querySelector("#container")
 );
-*/
-ReactDOM.render(
-    <App />,
-    document.querySelector("#container")
-);
+
