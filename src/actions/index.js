@@ -1,23 +1,28 @@
+import * as types from "../constants/actionTypes";
+
 let nextTodoId = 0;
 
 export const addTodo = (text) => ({
-  type: "ADD_TODO",
+  type: types.ADD_TODO,
   id: nextTodoId++,
   text,
 });
 
 export const setVisibilityFilter = (filter) => ({
-  type: "SET_VISIBILITY_FILTER",
+  type: types.SET_VISIBILITY_FILER,
   filter,
 });
 
 export const toggleTodo = (id) => ({
-  type: "TOGGLE_TODO",
+  type: types.TOGGLE_TODO,
   id,
 });
 
-export const VisibilityFilters = {
-  SHOW_ALL: "SHOW_ALL",
-  SHOW_COMPLETED: "SHOW_COMPLETED",
-  SHOW_ACTIVE: "SHOW_ACTIVE",
-};
+export const retrieve = () => ({
+  types: [types.RETRIEVE_DATA, types.RETRIEVE_DATA_FAILURE],
+  fetchAPI: {
+    path: "/api/v1.0/tasks",
+    method: "GET",
+  },
+});
+

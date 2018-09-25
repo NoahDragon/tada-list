@@ -63,3 +63,12 @@ Only run javascript test:
 npm run test-js # TODO: Have NOT implemented.
 ```
 
+## TODO
+
+- [ ] Clean up code for submission
+- [ ] Fix pytest issue
+- [ ] Implement javascript tests
+- [ ] Responsive
+- [ ] Drag to change order
+- [ ] Integrate with Travis-CI for testing
+- [ ] Delete item

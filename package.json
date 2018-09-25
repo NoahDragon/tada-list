@@ -17,8 +17,8 @@
     "build": "cross-os build-os",
     "build-os": {
       "darwin": "NODE_ENV=production ./node_modules/.bin/webpack",
-      "linux": "NODE_ENV=production ./node_modules/.bin/webpack",
-      "win32": "set NODE_ENV=production ./node_modules/.bin/webpack"
+      "linux": "NODE_ENV=production ./node_modules/.bin/wepack",
+      "win32": "$env:NODE_ENV=\"production\" ; .\\node_modules\\.bin\\webpack"
     },
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -43,6 +43,8 @@
   },
   "homepage": "https://github.com/NoahDragon/tada-list#readme",
   "dependencies": {
+    "es6-promise": "^4.2.5",
+    "isomorphic-fetch": "^2.2.1",
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
     "react-redux": "^5.0.7",

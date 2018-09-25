@@ -2,7 +2,7 @@
 '''server/app.py back-end main entry point'''
 import csv
 #pylint: disable-unused-argument
-from flask import Flask, send_from_directory
+from flask import Flask, render_template, jsonify
 from flask_cors import CORS
 
 app = Flask(__name__, static_folder="../dist")
@@ -17,12 +17,12 @@ CORS(app)
 
 @app.route('/')
 def index():
-  return send_from_directory(app.static_folder, "index.html")
+  return render_template("index.html")
 
-@app.route('/<path:path>')
-def asserts(path):
-  return send_from_directory(app.static_folder, path)
+#@app.route('/<path:path>')
+#def asserts(path):
+#  return send_from_directory(app.static_folder, path)
 
-@app.route('/todo/api/v1.0/tasks', methods=['GET'])
+@app.route('/api/v1.0/tasks', methods=['GET'])
 def getTasks():
-  return 'test'
+  return "empty"
