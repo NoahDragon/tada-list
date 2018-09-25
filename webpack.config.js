@@ -9,7 +9,7 @@ module.exports = {
     app: "./src/index.js",
   },
   output: {
-    path: path.resolve(__dirname, "dis"),
+    path: path.resolve(__dirname, "dist"),
     publicPath: "/",
     filename: "bundle.js",
   },
@@ -26,7 +26,7 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, "index.html"),
-      minify: {collapseWhitespace: true},
+      minify: {collapseWhitespace: false},
     }),
   ],
   optimization: {
