@@ -54,9 +54,9 @@ npm install --no-optional
 ```
 3. Build:
 ```sh
-npm run build # In win32, this command has tested in CMD terminal.
+npm run build # In win32 OS, this command has tested in PowerShell terminal.
 ```
 4. Start the server:
 ```sh
-npm run server # In win32, this command has tested in CMD terminal.
+npm run server # In win32 OS, this command has tested in CMD terminal.
 ```
