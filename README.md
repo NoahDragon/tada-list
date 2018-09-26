@@ -1,5 +1,3 @@
-# **WIP DRAFT**
-
 # Ta-Da List
 
 Yet another MV* TODO list.
