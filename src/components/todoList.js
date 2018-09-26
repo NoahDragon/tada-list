@@ -20,12 +20,20 @@ export default class TodoList extends React.Component {
     this.props.actions.retrieve();
   }
   /**
+   * Action toggle item completed or not.
+   * @param {int} id
+   */
+  toggleCompleted(id) {
+    this.props.actions.toggleTodo(id);
+  }
+  /**
    * Override the render method.
    * @return {JSX} To-Do list.
    */
   render() {
     const todoItems = this.props.todos.map((item) =>
-      <Todo key={item.id} {...item} />
+      <Todo key={item.id} {...item}
+        toggle={this.toggleCompleted.bind(this, item.id)}/>
     );
 
     return (
@@ -36,19 +44,6 @@ export default class TodoList extends React.Component {
   }
 }
 
-/*
-const TodoList = ({todos, toggleTodo}) => (
-  <ul>
-    {todos.map((todo) =>
-      <Todo
-        key={todo.id}
-        {...todo}
-        onClick={() => toggleTodo(todo.id)}
-      />
-    )}
-  </ul>
-);
-*/
 TodoList.propTypes = {
   todos: PropTypes.arrayOf(
       PropTypes.shape({
@@ -57,8 +52,5 @@ TodoList.propTypes = {
         text: PropTypes.string.isRequired,
       }).isRequired
   ).isRequired,
-//  toggleTodo: PropTypes.func..isRequired,
 };
-
-// export default TodoList;
 

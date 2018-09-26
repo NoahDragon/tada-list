@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 import {Provider} from "react-redux"; // eslint-disable-line
 import {createStore, applyMiddleware, compose} from "redux"; // eslint-disable-line
 
-import App from "./components/app";
+import App from "./containers/app";
 import reducers from "./reducers";
 import appMiddleware from "./middleware";
 

@@ -4,6 +4,8 @@
 
 Yet another MV* TODO list.
 
+The front-end is using React/Redux, and the back-end is using the Python Flask framework.
+
 
 ## Prerequisites
 
@@ -65,10 +67,14 @@ npm run test-js # TODO: Have NOT implemented.
 
 ## TODO
 
+- [ ] Add create date and amend date
 - [ ] Clean up code for submission
+- [ ] Pretty the UI
 - [ ] Fix pytest issue
 - [ ] Implement javascript tests
 - [ ] Responsive
 - [ ] Drag to change order
 - [ ] Integrate with Travis-CI for testing
 - [ ] Delete item
+- [ ] Save lists based on user name
+- [ ] Able to modify the list (change text)

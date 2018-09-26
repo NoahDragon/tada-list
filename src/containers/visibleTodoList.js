@@ -1,5 +1,5 @@
 import {connect} from "react-redux";
-import {bindActionCreators} from 'redux';
+import {bindActionCreators} from "redux";
 import * as actions from "../actions";
 import TodoList from "../components/todoList";
 import {VisibilityFilters} from "../constants/visibilityFilters";
@@ -22,7 +22,6 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  // toggleTodo: (id) => dispatch(actions.toggleTodo(id))
   actions: bindActionCreators(actions, dispatch),
 });
 

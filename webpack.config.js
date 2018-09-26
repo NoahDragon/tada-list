@@ -2,6 +2,7 @@ const path = require("path");
 const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const wpMode = process.env.NODE_ENV || "development"; // Webpack Mode
+const BUILD = wpMode == "development" ? true : false;
 
 module.exports = {
   mode: wpMode,
@@ -11,7 +12,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, "dist"),
     publicPath: "/",
-    filename: "bundle.js",
+    filename: BUILD ? "[name].js?v=[chunkhash]" : "[name].bundle.js",
   },
   module: {
     rules: [
@@ -53,7 +54,7 @@ module.exports = {
   devServer: {
     contentBase: path.join(__dirname, "dist"),
     compress: true,
-    port: 8888,
+    port: 8081,
     publicPath: "/",
     host: "0.0.0.0",
   },
