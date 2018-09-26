@@ -40,7 +40,7 @@ App
 
 ## Installation
 
-1. Download the source code:
+1. Download the source code from github:
 ```sh
 git clone https://github.com/NoahDragon/tada-list.git tada
 ```
