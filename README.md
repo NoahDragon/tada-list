@@ -92,6 +92,7 @@ npm run test-js # TODO: Have NOT implemented.
 
 - [x] Add create date and amend date
 - [x] Clean up code for submission
+- [x] Mouse over on items to display the amend date(if none, fall back to create date)
 - [ ] Pretty the UI
 - [ ] Fix pytest issue
 - [ ] Implement javascript tests
