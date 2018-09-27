@@ -8,25 +8,27 @@
     "lint-js": "./node_modules/.bin/eslint .",
     "lint-py": "pylint ./server/app.py",
     "server": "cross-os server-os",
+    "debug": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js",
+    "build": "cross-os build-prod-os",
+    "build-dev": "cross-os build-dev-os",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "cross-os":{
     "server-os": {
       "darwin": "FLASK_APP=server/app.py python -m flask run --port=8888",
       "linux": "FLASK_APP=server/app.py python -m flask run --port=8888",
       "win32": "set FLASK_APP=server/app.py & python -m flask run --port=8888"
     },
-    "debug": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js",
-    "build": "cross-os build-prod-os",
     "build-prod-os": {
       "darwin": "NODE_ENV=production ./node_modules/.bin/webpack",
-      "linux": "NODE_ENV=production ./node_modules/.bin/wepack",
-      "win32": "$env:NODE_ENV=\"production\" ; .\\node_modules\\.bin\\webpack"
+      "linux": "NODE_ENV=production ./node_modules/.bin/webpack",
+      "win32": "[Environment]::SetEnvironmentVariable(\"NODE_ENV\", \"production\") ; .\\node_modules\\.bin\\webpack"
     },
-    "build-dev": "cross-os build-dev-os",
     "build-dev-os": {
       "darwin": "./node_modules/.bin/webpack",
-      "linux": "./node_modules/.bin/wepack",
+      "linux": "./node_modules/.bin/webpack",
       "win32": ".\\node_modules\\.bin\\webpack"
-    },
-    "test": "echo \"Error: no test specified\" && exit 1"
+    }
   },
   "repository": {
     "type": "git",

@@ -1,5 +1,3 @@
-# **WIP DRAFT**
-
 # Ta-Da List
 
 Yet another MV* TODO list.
@@ -16,8 +14,33 @@ Please make sure the following components have successfully installed on target 
 * NPM
 * Git
 
+## File Structure
+
+Here are the main folders and files for this project.
+
+```
+App
+ ├-server                     **Backend Flask server source files**
+ │   ├-app.py                 **Server entry point**
+ │   ├-data.json              **Data store file**
+ │   └-data.json.template     **Data store initialize file**
+ ├-src                        **Frontend source files**
+ │   ├-actions
+ │   ├-components
+ │   ├-constants
+ │   ├-containers
+ │   ├-middleware             **Middleware to connect redux with flask**
+ │   ├-reducers
+ │   └-index.js               **Frontend entry point**
+ ├-index.html                 **Template for main page**
+ ├-package.json               **Nodejs package info & command for the App**
+ ├-requirments.txt            **Python package file**
+ └-webpack.config.js          **Webpack configuration to build front end**
+```
 
 ## Installation
+
+**Recommanded steps on MacOS**
 
 1. Download the source code:
 ```sh
@@ -67,8 +90,8 @@ npm run test-js # TODO: Have NOT implemented.
 
 ## TODO
 
-- [ ] Add create date and amend date
-- [ ] Clean up code for submission
+- [x] Add create date and amend date
+- [x] Clean up code for submission
 - [ ] Pretty the UI
 - [ ] Fix pytest issue
 - [ ] Implement javascript tests
@@ -78,3 +101,4 @@ npm run test-js # TODO: Have NOT implemented.
 - [ ] Delete item
 - [ ] Save lists based on user name
 - [ ] Able to modify the list (change text)
+- [ ] Error handling on corrupt data file

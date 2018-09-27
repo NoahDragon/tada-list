@@ -2,6 +2,7 @@
 '''server/app.py back-end main entry point'''
 import json
 import os
+import datetime as dt
 #pylint: disable-unused-argument
 from flask import Flask, send_from_directory, jsonify, request
 from flask_cors import CORS
@@ -30,25 +31,39 @@ def asserts(path):
 def getLists():
   items = loadData()
   return jsonify(result='ok', data=items["todos"])
-
+'''
+Data Model for the todo list:
+todos[
+  {
+    id            Unique key for each item
+    text          Todo item
+    completed     Flag of compeletation
+    createDate    The time when created the item
+    amendDate     The time when the item status changed
+  }
+]
+'''
 @app.route('/api/v1.0/tasks', methods=['PUT'])
 def updateItem():
   item = json.loads(request.data.decode("utf-8"))
   items = loadData()
   exist = False
+  currentTime = dt.datetime.now()
 
   for i in items["todos"]:
     if i["id"] == item["id"]:
       exist = True
       i["text"] = item["text"]
       i["completed"] = item["completed"]
+      i["amendDate"] = currentTime
       break
 
   if not exist:
+    item["createDate"] = currentTime
     items["todos"].append(item)
 
   with open(data_file, 'w') as f:
-    json.dump(items, f)
+    json.dump(items, f, default=str)
 
   return jsonify(result='ok', data=items["todos"])
 
@@ -56,14 +71,19 @@ def updateItem():
 def toggleItem():
   item = json.loads(request.data.decode("utf-8"))
   items = loadData()
+  exist = False
+  currentTime = dt.datetime.now()
 
   for i in items["todos"]:
     if i["id"] == item["id"]:
+      exist = True
       i["completed"] = not i["completed"]
+      i["amendDate"] = currentTime
       break
 
-  with open(data_file, 'w') as f:
-    json.dump(items, f)
+  if exist:
+    with open(data_file, 'w') as f:
+      json.dump(items, f, default=str)
 
   return jsonify(result='ok', data=items["todos"])
 
