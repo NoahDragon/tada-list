@@ -13,6 +13,7 @@ export default class Todo extends React.Component {
 
     this.state ={
       datetime: null,
+      isMouseOver: false,
     };
     this.mouseOver = this.mouseOver.bind(this);
     this.mouseOut = this.mouseOut.bind(this);
@@ -23,6 +24,7 @@ export default class Todo extends React.Component {
   mouseOver() {
     this.setState({
       datetime: this.props.amendDate || this.props.createDate,
+      isMouseOver: true,
     });
   }
   /**
@@ -31,6 +33,7 @@ export default class Todo extends React.Component {
   mouseOut() {
     this.setState({
       datetime: null,
+      isMouseOver: false,
     });
   }
   /**
@@ -56,6 +59,9 @@ export default class Todo extends React.Component {
         style = { {
           textDecoration: this.props.completed ? "line-through" : "none",
         }}
+        className = {this.state.isMouseOver ?
+                    "list-group-item active" :
+                    "list-group-item"}
         onMouseOver = {() => this.mouseOver()}
         onMouseOut = {() => this.mouseOut()}
       >

@@ -31,15 +31,19 @@ export default class TodoList extends React.Component {
    * @return {JSX} To-Do list.
    */
   render() {
+    let maxId = this.props.maxId;
     const todoItems = this.props.todos.map((item) =>
-      <Todo key={item.id} {...item}
+      <Todo maxId={maxId} key={item.id}
+        {...item}
         toggle={this.toggleCompleted.bind(this, item.id)}/>
     );
 
     return (
-      <ul className="todoList">
-        {todoItems}
-      </ul>
+      <div>
+        <ul className="todoList col-md-4 list-group">
+          {todoItems}
+        </ul>
+      </div>
     );
   }
 }

@@ -1,7 +1,5 @@
 import * as types from "../constants/actionTypes";
 
-let nextTodoId = 0;
-
 const addTodoSuccessed = (data) => ({type: types.ADD_TODO, data});
 const addTodoFailed = () => ({type: types.ADD_TODO_FAILURE});
 
@@ -11,7 +9,6 @@ export const addTodo = (text) => ({
     path: "/api/v1.0/tasks",
     method: "PUT",
     body: {
-      id: nextTodoId++,
       text,
       completed: false,
     },

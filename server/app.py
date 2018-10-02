@@ -17,6 +17,11 @@ def loadData():
     items = json.load(f)
   return items
 
+initLoad = loadData()
+maxId = -1
+if len(initLoad["todos"]) > 0 and "id" in initLoad["todos"][-1]:
+  maxId = initLoad["todos"][-1]["id"]
+
 @app.route("/")
 def index():
   '''Return index.html for unspecified routes'''
@@ -45,20 +50,24 @@ todos[
 '''
 @app.route('/api/v1.0/tasks', methods=['PUT'])
 def updateItem():
+  global maxId
   item = json.loads(request.data.decode("utf-8"))
   items = loadData()
   exist = False
   currentTime = dt.datetime.now()
 
-  for i in items["todos"]:
-    if i["id"] == item["id"]:
-      exist = True
-      i["text"] = item["text"]
-      i["completed"] = item["completed"]
-      i["amendDate"] = currentTime
-      break
+  if "id" in item:
+    for i in items["todos"]:
+      if i["id"] == item["id"]:
+        exist = True
+        i["text"] = item["text"]
+        i["completed"] = item["completed"]
+        i["amendDate"] = currentTime
+        break
 
   if not exist:
+    maxId = maxId + 1
+    item["id"] = maxId
     item["createDate"] = currentTime
     items["todos"].append(item)
 

@@ -17,7 +17,7 @@ export class App extends React.Component {
     const {todos, todoActions} = this.props;
 
     return (
-      <div>
+      <div className="col mx-auto">
         <AddTodo actions={todoActions} />
         <VisibleTodoList actions={todoActions} todos={todos}/>
         <Footer />

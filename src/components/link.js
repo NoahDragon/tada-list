@@ -8,6 +8,8 @@ const Link = ({active, children, onClick}) => (
     style={{
       marginLeft: "4px",
     }}
+    className="btn btn-outline-primary"
+    type="button"
   >
     {children}
   </button>

@@ -25,20 +25,34 @@ export default class AddTodo extends React.Component {
     this.props.actions.addTodo(input.value.trim());
     input.value = "";
   }
-
   /**
    * @return {JSX}
    */
   render() {
     let input;
     return (
-      <div>
-        <form onSubmit={(e) => this.addTodo(e, input)}>
-          <input ref={(node) => input = node} />
-          <button type="submit">
-            Add Todo
-          </button>
-        </form>
+      <div style={{
+        marginBottom: "10px",
+        marginTop: "10px",
+      }}>
+        <div className="input-group col-md-4">
+          <input ref={(node) => input = node}
+            className="form-control"
+            type="text"
+            placeholder="Input todo item..."
+            onKeyPress={(e)=>{
+              if (e.key === "Enter") {
+                this.addTodo(e, input);
+              }
+            }}/>
+          <span className="input-group-btn">
+            <button type="button"
+              className="btn btn-default"
+              onClick={(e)=> this.addTodo(e, input)}>
+              Ta Da!
+            </button>
+          </span>
+        </div>
       </div>
     );
   }
