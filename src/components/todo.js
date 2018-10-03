@@ -47,8 +47,9 @@ export default class Todo extends React.Component {
       dt = <span
         style = {{
           color: "#C0C0C0",
+          pointerEvents: "none",
         }}
-      >{stateDateTime}</span>;
+      >{new Date(stateDateTime).toString()}</span>;
     } else {
       dt = "";
     }

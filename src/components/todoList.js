@@ -40,7 +40,7 @@ export default class TodoList extends React.Component {
 
     return (
       <div>
-        <ul className="todoList col-md-4 list-group">
+        <ul className="todoList col-md-6 list-group">
           {todoItems}
         </ul>
       </div>

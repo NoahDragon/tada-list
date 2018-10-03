@@ -94,7 +94,7 @@ npm run test-js # TODO: Have NOT implemented.
 - [x] Clean up code for submission
 - [x] Mouse over on items to display the amend date(if none, fall back to create date)
 - [x] Pretty the UI
-- [ ] Fix the blink when mouse over todo item
+- [x] Fix the blink when mouse over todo item
 - [ ] Center all elements
 - [ ] Fix pytest issue
 - [ ] Implement javascript tests
